@@ -29,7 +29,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo Yii::$app->request->baseUrl; ?>/favicon.ico" type="image/x-icon" />
     <?= Html::csrfMetaTags() ?>
-    <title>Project :: <?= Html::encode($this->title) ?></title>
+    <title>Project Title :: <?= $this->title ?></title>
     <?php $this->head() ?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>

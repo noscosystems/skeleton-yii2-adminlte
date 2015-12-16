@@ -17,7 +17,6 @@ $profileImage = Yii::$app->request->baseurl . "/images/profile_image_holder.png"
 $controllerName = Yii::$app->controller->id;
 $actionName = Yii::$app->controller->action->id;
 
-
 AppAsset::register($this);
 ?>
 
@@ -29,7 +28,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?php echo Yii::$app->request->baseUrl; ?>/favicon.ico" type="image/x-icon" />
     <?= Html::csrfMetaTags() ?>
-    <title>Project :: <?= Html::encode($this->title) ?></title>
+    <title>Project Title :: <?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
@@ -37,7 +36,7 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 <div class="wrapper">
     <header class="main-header">
-        <?= Html::a('<span class="logo-mini"><b>PT</b></span><span class="logo-lg"><b>Project Title</b></span>', ['/'], ['class' => 'logo']); ?>
+        <?= Html::a('<span class="logo-mini"><b>PT</b></span><span class="logo-lg"><b>Project</b> Title</span>', ['/'], ['class' => 'logo']); ?>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
@@ -130,14 +129,14 @@ AppAsset::register($this);
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="<?= $profileImage ?>" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Username</span>
+                            <span class="hidden-xs"><?= $user->username ?></span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="<?= $profileImage ?>" class="img-circle" alt="User Image">
                                 <p>
-                                    Username
+                                    <?= $user->username ?>
                                     <small>User Rank</small>
                                 </p>
                             </li>
@@ -179,7 +178,7 @@ AppAsset::register($this);
                     <img src="<?= $profileImage ?>" class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-left info">
-                    <p>Username</p>
+                    <p><?= $user->username ?></p>
                     <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                 </div>
             </div>

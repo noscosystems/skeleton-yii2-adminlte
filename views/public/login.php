@@ -19,23 +19,16 @@ $this->title = 'Login';
             <div class="login-box-body">
                 <p class="login-box-msg">Sign in to start your session</p>
                 <div class="form-group has-feedback">
-                    <input type="email" class="form-control" placeholder="Email">
-                    <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                    <?= $form->field($model, 'username', ['inputOptions' => ['class' => 'form-control', 'placeholder' => 'Username']])->label(false) ?>
+                    <span class="fa fa-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
-                    <input type="password" class="form-control" placeholder="Password">
-                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                    <?= $form->field($model, 'password', ['inputOptions' => ['class' => 'form-control', 'placeholder' => 'Username']])->passwordInput()->label(false) ?>
+                    <span class="fa fa-lock form-control-feedback"></span>
                 </div>
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox"> Remember Me
-                            </label>
-                        </div>
-                    </div><!-- /.col -->
-                    <div class="col-xs-4">
-                        <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <div class="col-xs-4 col-xs-offset-4">
+                        <?= Html::submitButton('Login', ['class' => 'btn btn-primary btn-flat form-control', 'name' => 'login-button']) ?>
                     </div><!-- /.col -->
                 </div>
             </div>

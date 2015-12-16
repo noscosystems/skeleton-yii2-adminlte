@@ -10,19 +10,19 @@ class m151216_094205_user extends Migration
         $this->createTable(
             '{{user}}',
             array(
-                'id'          => $this->primaryKey(),
-                'title'       => $this->string(20)->notNull(),
-                'firstname'   => $this->string(128)->notNull(),
-                'lastname'    => $this->string(128)->notNull(),
-                'contact'     => $this->string(20)->notNull(),
-                'security'    => $this->string(128),
-                'username'    => $this->string(128)->notNull(),
-                'password'    => $this->string(128)->notNull(),
-                'authKey'     => $this->text(),
-                'accessToken' => $this->text(),
-                'admin'       => $this->integer()->notNull()->defaultValue(10),
-                'branch'      => $this->string()->notNull(),
-                'created'     => $this->integer()->notNull(),
+                'id'            => $this->primaryKey(),
+                'username'      => $this->string(128)->notNull(),
+                'password'      => $this->string(128)->notNull(),
+                'admin'         => $this->integer()->notNull()->defaultValue(10),
+                'branch'        => $this->integer(),
+                'firstname'     => $this->string(128),
+                'lastname'      => $this->string(128),
+                'contact'       => $this->string(20),
+                'email'         => $this->string(128),
+                'security'      => $this->string(128),
+                'authKey'       => $this->text(),
+                'accessToken'   => $this->text(),
+                'created'       => $this->integer()->notNull(),
 
             ),
             implode(' ', array(
@@ -36,21 +36,9 @@ class m151216_094205_user extends Migration
     }
 
     public function down()
-    {
-        
+    {   
         $this->dropTable("{{user}}");
 
         return true;
     }
-
-    /*
-    // Use safeUp/safeDown to run migration code within a transaction
-    public function safeUp()
-    {
-    }
-
-    public function safeDown()
-    {
-    }
-    */
 }

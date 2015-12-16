@@ -1,10 +1,10 @@
 <?php
 
-namespace app\models;
+namespace app\models\form;
 
 use Yii;
 use yii\base\Model;
-use yii\base\Model\user;
+use app\models\User;
 
 /**
  * LoginForm is the model behind the login form.
@@ -16,7 +16,6 @@ class LoginForm extends Model
     public $rememberMe = true;
 
     private $_user = false;
-
 
     /**
      * @return array the validation rules.
